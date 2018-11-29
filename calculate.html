@@ -1,0 +1,54 @@
+<!DCOTYPE html>
+<thml>
+<head>
+	<title>Calculate</title>
+</head>
+<body>
+	<center>
+		<h1>Shorty Calcy</h1>
+		<form>
+			<table border="10px" cellspacing="10">
+				<tr><th colspan="5"><center> Calculator </center></th></tr>				
+				<tr><th colspan="5"><input type="text" name="res" id="screen"></th></tr>				
+				<script>
+					function nb(val) {
+							document.write("<th><input type=button value=" + val);
+							document.write(" onClick=res.value+=\'" + val +"\'></th>");
+					}					
+					function solve(b) {
+						var x = document.getElementById("screen").value;
+						x = eval(x) * b;
+						document.getElementById("screen").value = x;
+					}
+				</script>
+				
+				<tr> <script>	
+					nb(1); nb(2); nb(3); nb('+'); nb('-');
+				</script> </tr>
+				<tr> <script>	
+					nb(4); nb(5); nb(6); nb('*'); nb('/');
+				</script> </tr>
+				<tr> <script>	
+					nb(7); nb(8); nb(9); nb('%');
+				</script>
+				<th><input type=button value="^2" onClick="solve(res.value)"></th>
+				</tr>					
+				<tr> <script>	
+					nb(0); nb('.'); nsb('=', "solve(1)");
+				</script>					
+					<th><input type=button value="=" onClick=solve(1)></th>
+					<th><input type=button value="C" onClick=res.value=""></th>
+				 </tr>
+				 <tr><th colspan="5px"> Currency Convertion </th></tr>
+				 <tr>
+				 <th colspan="2"><input type=button value="RS-USD" onclick=solve(0.015)></th>
+				 <th colspan="2"><input type=button value="USD-RS" onclick=solve(63)></th>
+				 </tr><tr>
+				 <th colspan="2"><input type=button value="USD-EURO" onclick=solve(0.83)></th>
+				 <th colspan="2"><input type=button value="EURO-USD" onclick=solve(1.19)></th>
+				 </tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>
